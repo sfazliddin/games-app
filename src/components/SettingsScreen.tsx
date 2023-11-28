@@ -11,6 +11,11 @@ const SettingsScreen: React.FC = () => {
     document.body.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
+  useEffect(() => {
+    // Set the body font size based on the selected option
+    document.body.style.fontSize = fontSize;
+  }, [fontSize]);
+
   const toggleDarkMode = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };

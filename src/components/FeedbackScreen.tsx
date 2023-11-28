@@ -1,11 +1,15 @@
-// src/components/FeedbackScreen.tsx
+// src/pages/FeedbackPage.tsx
 import React from "react";
+import FeedbackForm from "../components/FeedbackForm";
 
 const FeedbackScreen: React.FC = () => {
-  // Implement your feedback logic here
   return (
-    <div>
-      <h1>Feedback Screen</h1>
+    <div className="container mx-auto mt-10">
+      <h1 className="text-4xl font-bold mb-6">Feedback</h1>
+      <p className="text-gray-700">
+        We value your feedback! Please share your thoughts with us below.
+      </p>
+      <FeedbackForm />
     </div>
   );
 };
