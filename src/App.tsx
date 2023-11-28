@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomeScreen from "./components/HomeScreen";
+import GameScreen from "./components/GameScreen";
+import SettingsScreen from "./components/SettingsScreen";
+import FeedbackScreen from "./components/FeedbackScreen";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" Component={HomeScreen} />
+        <Route path="/1-player" Component={GameScreen} />
+        <Route path="/2-player" Component={GameScreen} />
+        <Route path="/settings" Component={SettingsScreen} />
+        <Route path="/feedback" Component={FeedbackScreen} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
