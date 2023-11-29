@@ -1,6 +1,7 @@
 // src/components/SettingsScreen.tsx
 import React, { useState, useEffect } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
+import { GoBackButton } from "./GeneralButtons";
 
 const SettingsScreen: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,6 +27,7 @@ const SettingsScreen: React.FC = () => {
 
   return (
     <div className="container mx-auto mt-10">
+      <GoBackButton />
       <h1 className="text-4xl font-bold mb-6">Settings</h1>
 
       <div className="mb-4 relative">

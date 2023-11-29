@@ -5,6 +5,7 @@ import HomeScreen from "./components/HomeScreen";
 import GameScreen from "./components/GameScreen";
 import SettingsScreen from "./components/SettingsScreen";
 import FeedbackScreen from "./components/FeedbackScreen";
+import ShutTheBoxGame from "./games/ShutTheBox";
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/2-player" Component={GameScreen} />
         <Route path="/settings" Component={SettingsScreen} />
         <Route path="/feedback" Component={FeedbackScreen} />
+        <Route path="/shut-the-box" Component={ShutTheBoxGame} />
       </Routes>
     </Router>
   );

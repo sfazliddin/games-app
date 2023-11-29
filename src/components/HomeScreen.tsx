@@ -6,7 +6,7 @@ const HomeScreen: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-6xl font-extrabold mb-8 text-center">
-        Welcome to the Game App
+        Welcome to the Games App
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Link to="/1-player" className="btn">
