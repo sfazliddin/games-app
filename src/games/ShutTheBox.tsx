@@ -53,9 +53,6 @@ const ShutTheBoxGame: React.FC = () => {
   };
   const handleNumberClick = (number: number) => {
     const { remainingNumbers, selectedNumbers, currentPlayer } = gameState;
-    const diceOne = gameState.dice1;
-    const diceTwo = gameState.dice2;
-    setSum(diceOne + diceTwo);
 
     if (remainingNumbers.includes(number) && sum >= number) {
       setGameState({
@@ -63,8 +60,8 @@ const ShutTheBoxGame: React.FC = () => {
         remainingNumbers: remainingNumbers.filter((n) => n !== number),
         selectedNumbers: [...selectedNumbers, number],
       });
+      setSum(sum - number);
     }
-    setSum(sum - number);
   };
   const checkWin = () => {
     const { remainingNumbers, currentPlayer, scores } = gameState;
@@ -107,6 +104,7 @@ const ShutTheBoxGame: React.FC = () => {
     <div className="container mx-auto mt-10 text-center">
       <GoBackButton />
       <h1 className="text-4xl font-bold mb-6">Shut the Box</h1>
+      <p>total: {sum}</p>
       <div className="bg-gray-100 p-4 rounded-md">
         <p className="text-lg mb-4">
           {diceRolled

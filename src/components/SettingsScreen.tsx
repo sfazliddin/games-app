@@ -4,21 +4,36 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { GoBackButton } from "./GeneralButtons";
 
 const SettingsScreen: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [fontSize, setFontSize] = useState("medium");
+  // Load dark mode setting from localStorage or use default value
+  const [darkMode, setDarkMode] = useState(() => {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    return storedDarkMode ? JSON.parse(storedDarkMode) : false;
+  });
+
+  // Load font size setting from localStorage or use default value
+  const [fontSize, setFontSize] = useState(() => {
+    const storedFontSize = localStorage.getItem("fontSize");
+    return storedFontSize || "medium";
+  });
 
   useEffect(() => {
     // Apply dark mode class to the body when darkMode changes
     document.body.classList.toggle("dark", darkMode);
+
+    // Save dark mode setting to localStorage
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
   useEffect(() => {
     // Set the body font size based on the selected option
     document.body.style.fontSize = fontSize;
+
+    // Save font size setting to localStorage
+    localStorage.setItem("fontSize", fontSize);
   }, [fontSize]);
 
   const toggleDarkMode = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
+    setDarkMode((prevDarkMode: any) => !prevDarkMode);
   };
 
   const changeFontSize = (size: string) => {
