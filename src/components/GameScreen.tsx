@@ -8,9 +8,12 @@ const GameScreen: React.FC = () => {
   return (
     <div className="container mx-auto mt-10">
       <GoBackButton />
-      <h1 className="text-4xl font-bold mb-6">Game Screen</h1>
+      <h1 className="text-4xl font-bold mb-6">Games Screen</h1>
       <Link to="/shut-the-box" className="btn">
         Play Shut The Box
+      </Link>
+      <Link to="/chess" className="btn">
+        Play Chess
       </Link>
     </div>
   );
